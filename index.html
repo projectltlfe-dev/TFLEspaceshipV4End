@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Misi Engage: Menuju Bulan</title>
+<title>Misi Tim Engaged!: Menuju Bulan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
@@ -140,10 +140,26 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
 @keyframes jolt{0%{transform:translateY(0)}20%{transform:translateY(-14px) rotate(1deg)}45%{transform:translateY(8px) rotate(-1deg)}70%{transform:translateY(-4px)}100%{transform:none}}
 
 /* paper notes */
-.paper{position:relative;width:min(100%,500px);max-height:calc(100% - 20px);overflow:auto;color:var(--ink);background:repeating-linear-gradient(transparent 0 29px,#dde6f3 29px 30px),var(--paper);background-position:0 12px;border:3px solid var(--ink);border-radius:6px 6px 16px 16px;box-shadow:0 8px 0 rgba(0,0,0,.4);padding:22px 20px 20px 34px;transform:translateY(16px) rotate(-1deg);transition:transform .55s cubic-bezier(.3,1.4,.5,1)}
+.paper{position:relative;width:min(100%,510px);max-height:calc(100% - 20px);overflow:auto;color:var(--ink);background:repeating-linear-gradient(transparent 0 29px,#dde6f3 29px 30px),var(--paper);background-position:0 12px;border:3px solid var(--ink);border-radius:6px 6px 16px 16px;box-shadow:0 8px 0 rgba(0,0,0,.4);padding:20px 20px 18px 34px;transform:translateY(16px) rotate(-1deg);transition:transform .55s cubic-bezier(.3,1.4,.5,1)}
 .paper::before{content:"";position:absolute;top:0;bottom:0;left:20px;width:2px;background:#ff9b9b}
-.paper h2{font-family:var(--hand);font-weight:400;font-size:clamp(25px,6vw,32px);line-height:1.05;margin-bottom:8px}
-.paper p{font-size:18px;line-height:1.25;margin-bottom:10px}
+.paper h2{font-family:var(--hand);font-weight:400;font-size:clamp(25px,6vw,32px);line-height:1.05;margin-bottom:6px}
+.paper p{font-size:18px;line-height:1.25;margin-bottom:12px}
+
+/* ---------- Performance Summary UI in Ending Paper ---------- */
+.perf-wrap{position:relative;background:#f5f0e2;border:2.5px solid var(--ink);border-radius:14px;padding:10px 12px 12px;margin:8px 0 14px;box-shadow:0 4px 0 rgba(20,21,27,.14)}
+.perf-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;padding-bottom:6px;border-bottom:2px dashed #c8c1b0}
+.perf-title{display:inline-flex;align-items:center;gap:6px;font-family:var(--round);font-weight:700;font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink)}
+.perf-title svg{width:16px;height:16px;flex:none}
+.perf-badge{font-family:var(--round);font-weight:600;font-size:11.5px;background:var(--warn);color:var(--ink);border:2px solid var(--ink);border-radius:99px;padding:1px 9px}
+.bigstats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0}
+.bs{position:relative;border:2.5px solid var(--ink);border-radius:12px;padding:8px 10px;background:var(--bsc,#dff7e6);box-shadow:0 3px 0 var(--ink);display:flex;align-items:center;gap:10px;text-align:left}
+.bs-ic{width:36px;height:36px;border-radius:10px;border:2px solid var(--ink);background:rgba(255,255,255,.75);display:grid;place-items:center;flex:none}
+.bs-ic svg{width:22px;height:22px;display:block}
+.bs-info{min-width:0;flex:1}
+.bs b{display:block;font-family:var(--round);font-weight:700;font-size:clamp(22px,5.5vw,28px);line-height:1.05;color:var(--ink)}
+.bs span{display:block;margin-top:2px;font-family:var(--round);font-weight:600;font-size:12.5px;color:#3b3a35;line-height:1.1}
+.end-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
 .qs{list-style:none;counter-reset:q;margin:4px 0 12px}
 .qs li{counter-increment:q;position:relative;padding:6px 0 6px 40px;font-size:20px;line-height:1.15;min-height:38px}
 .qs li::before{content:counter(q);position:absolute;left:0;top:5px;width:28px;height:28px;border-radius:50%;border:2.5px solid var(--ink);background:var(--warn);display:grid;place-items:center;font-family:var(--round);font-weight:700;font-size:14px}
@@ -179,8 +195,11 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
 .overhead{position:relative;z-index:3;width:min(100%,980px);margin:0 auto;padding:calc(10px + env(safe-area-inset-top)) clamp(10px,3vw,24px) 14px;background:linear-gradient(#5d6579,#484f61);border:3px solid var(--ink);border-top:none;border-radius:0 0 30px 30px;box-shadow:0 7px 0 rgba(0,0,0,.35)}
 .bolt{position:absolute;width:8px;height:8px;border-radius:50%;background:#8a93a8;border:2px solid var(--ink)}
 .bolt.b1{left:10px;bottom:12px}.bolt.b2{right:10px;bottom:12px}
-.hud{display:flex;align-items:center;gap:10px;min-height:44px;padding-right:54px}
-.chip{display:flex;align-items:center;gap:6px;max-width:46%;padding:4px 12px 4px 5px;background:var(--panel-dd);border:2.5px solid var(--ink);border-radius:99px;font-family:var(--round);font-weight:600;font-size:clamp(12px,3.2vw,15px)}
+.hud{display:flex;align-items:center;gap:8px;min-height:44px;padding-right:54px}
+.back-btn{display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:var(--paper);color:var(--ink);border:2.5px solid var(--ink);border-radius:99px;font-family:var(--round);font-weight:600;font-size:clamp(11px,2.8vw,13px);box-shadow:0 3px 0 var(--ink);flex:none;transition:transform .08s,box-shadow .08s}
+.back-btn:hover{filter:brightness(1.05)}
+.back-btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+.chip{display:flex;align-items:center;gap:6px;max-width:38%;padding:4px 12px 4px 5px;background:var(--panel-dd);border:2.5px solid var(--ink);border-radius:99px;font-family:var(--round);font-weight:600;font-size:clamp(12px,3.2vw,15px)}
 .chip svg{width:26px;height:26px;flex:none}
 .chip span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hull{flex:1;display:flex;align-items:center;gap:8px;min-width:0;font-family:var(--round);font-weight:600;font-size:clamp(11px,2.8vw,14px)}
@@ -266,6 +285,37 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
 .card-h .left{margin-left:auto;font-size:12px;color:#7c786c;white-space:nowrap}
 .card-t{font-size:clamp(18px,4.5vw,22px);line-height:1.22;margin:7px 0 5px}
 .card-f{font-family:var(--round);font-weight:500;font-size:11.5px;color:#8a8577}
+
+/* ---------- Gesture Tutorial (Drag & Drop Hand) ---------- */
+.tut-demo{position:relative;width:220px;height:72px;margin:4px auto 12px;background:#eef3fb;border:2.5px solid var(--ink);border-radius:12px;overflow:hidden}
+.tut-demo .td-slots{display:flex;gap:6px;justify-content:center;padding-top:7px}
+.tut-demo .td-s{width:54px;height:16px;border-radius:5px;border:2px solid var(--ink);background:#121722}
+.tut-demo .td-s:nth-child(1){border-top:4px solid var(--cM)}
+.tut-demo .td-s:nth-child(2){border-top:4px solid var(--cP);animation:tdSlotGlow 2.2s infinite}
+.tut-demo .td-s:nth-child(3){border-top:4px solid var(--cA)}
+.tut-demo .td-card{position:absolute;left:50%;bottom:6px;width:82px;height:24px;margin-left:-41px;background:var(--paper);border:2px solid var(--ink);border-radius:6px;box-shadow:0 2px 0 var(--ink);animation:tdCardMove 2.2s ease-in-out infinite}
+.tut-demo .td-hand{position:absolute;left:50%;bottom:2px;width:28px;height:28px;margin-left:-4px;pointer-events:none;filter:drop-shadow(0 2px 0 rgba(0,0,0,.35));animation:tdHandMove 2.2s ease-in-out infinite}
+@keyframes tdCardMove{0%,15%{transform:translateY(0) scale(1);opacity:1}65%{transform:translateY(-34px) scale(.75);opacity:1}80%,100%{transform:translateY(-34px) scale(.4);opacity:0}}
+@keyframes tdHandMove{0%{transform:translate(10px,6px) scale(1.1)}15%{transform:translate(0,0) scale(.92)}65%{transform:translate(0,-34px) scale(.92)}80%,100%{transform:translate(8px,-30px) scale(1.08);opacity:0}}
+@keyframes tdSlotGlow{0%,55%,100%{box-shadow:none}65%,80%{box-shadow:0 0 0 2px var(--cP),0 0 10px var(--cP)}}
+
+#tutGesture{position:absolute;left:50%;bottom:54px;z-index:15;width:68px;height:68px;margin-left:10px;pointer-events:none;opacity:0;transition:opacity .3s}
+#tutGesture.show{opacity:1;animation:liveHandDrag 2.1s cubic-bezier(.4,0,.2,1) infinite}
+#tutGesture svg{width:100%;height:100%;display:block;filter:drop-shadow(0 4px 0 var(--ink))}
+#tutGesture .ring{position:absolute;left:8px;top:4px;width:28px;height:28px;border-radius:50%;border:3px solid var(--warn);opacity:0;animation:liveRing 2.1s ease-out infinite}
+@keyframes liveHandDrag{
+  0%{transform:translate(18px,18px) scale(1.12);opacity:0}
+  12%{transform:translate(0,0) scale(1);opacity:1}
+  22%{transform:translate(0,4px) scale(.9);opacity:1}
+  72%{transform:translate(0,calc(var(--H) * -0.52)) scale(.92);opacity:1}
+  88%,100%{transform:translate(0,calc(var(--H) * -0.52)) scale(1.08);opacity:0}
+}
+@keyframes liveRing{
+  0%,15%{transform:scale(.5);opacity:0}
+  24%{transform:scale(1);opacity:1}
+  50%,100%{transform:scale(1.9);opacity:0}
+}
+
 .dial{position:absolute;z-index:1;top:50%;width:86px;transform:translateY(-42%);display:none;text-align:center;font-family:var(--round);font-weight:500;font-size:12px;color:#cfd5e3}
 .dial svg{width:100%;display:block;margin-bottom:2px}
 .dial.dl{left:4%}.dial.dr{right:4%}
@@ -309,12 +359,12 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
 .fb .tagc{display:inline-block;font-family:var(--round);font-weight:600;font-size:14px;padding:1px 9px;border-radius:99px;border:2px solid var(--ink);background:var(--c)}
 .fb small{display:block;font-family:var(--round);font-size:12.5px;color:#7c786c;margin-top:6px}
 .brief{z-index:8}
-.brief .panel{width:min(100%,360px);text-align:center}
-.brief .rules{display:inline-block;text-align:left;margin:2px 0 16px}
+.brief .panel{width:min(100%,380px);text-align:center}
+.brief .rules{display:inline-block;text-align:left;margin:2px 0 14px}
 .brief .ph{display:inline-flex;align-items:center;gap:6px;font-family:var(--round);font-weight:600;font-size:13px;background:var(--panel-dd);color:#dfe4f0;border:2px solid var(--ink);border-radius:99px;padding:3px 11px;margin-bottom:10px}
 .brief .ph i{width:8px;height:8px;border-radius:50%;background:var(--red);animation:blink 1s steps(2) infinite}
 .brief h2{font-family:var(--hand);font-weight:400;font-size:clamp(26px,6.4vw,33px);line-height:1.02;margin-bottom:8px}
-.brief p{font-size:18px;line-height:1.25;margin-bottom:10px}
+.brief p{font-size:18px;line-height:1.25;margin-bottom:8px}
 .legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px}
 .legend span{font-family:var(--round);font-weight:600;font-size:13.5px;padding:3px 10px;border-radius:99px;border:2px solid var(--ink);background:var(--c)}
 .rules{list-style:none;margin-bottom:10px}
@@ -369,15 +419,11 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
 @keyframes pole{to{height:min(28vw,128px)}}
 @keyframes cloth{to{transform:scaleX(1)}}
 @keyframes wave{from{transform:scaleX(1) skewY(0)}to{transform:scaleX(.94) skewY(-3deg)}}
-.mnote{position:absolute;left:50%;top:calc(env(safe-area-inset-top) + 60px);z-index:5;width:min(92%,460px);transform:translate(-50%,-14px);opacity:0;pointer-events:none;transition:opacity .5s,transform .6s cubic-bezier(.3,1.5,.5,1);background:var(--paper);color:var(--ink);border:3px solid var(--ink);border-radius:18px;box-shadow:0 7px 0 var(--ink);padding:12px 16px 14px;text-align:center}
+.mnote{position:absolute;left:50%;top:calc(env(safe-area-inset-top) + 60px);z-index:5;width:min(90%,380px);transform:translate(-50%,-14px);opacity:0;pointer-events:none;transition:opacity .5s,transform .6s cubic-bezier(.3,1.5,.5,1);background:var(--paper);color:var(--ink);border:3px solid var(--ink);border-radius:18px;box-shadow:0 7px 0 var(--ink);padding:16px 18px 18px;text-align:center}
 .mnote.show{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
 .mnote .mtag{display:inline-block;font-family:var(--round);font-weight:600;font-size:13px;background:var(--warn);border:2px solid var(--ink);border-radius:99px;padding:2px 11px;margin-bottom:6px}
-.mnote h2{font-family:var(--hand);font-weight:400;font-size:clamp(23px,6vw,31px);line-height:1.02;margin-bottom:6px}
-.mnote p{font-size:18px;line-height:1.22;margin-bottom:10px}
-.bigstats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 13px}
-.bs{border:3px solid var(--ink);border-radius:16px;padding:10px 6px 8px;background:var(--bsc,#e8f9ee);box-shadow:0 4px 0 var(--ink)}
-.bs b{display:block;font-family:var(--round);font-weight:700;font-size:clamp(36px,10.5vw,54px);line-height:1;color:var(--ink)}
-.bs span{display:block;margin-top:4px;font-family:var(--round);font-weight:600;font-size:14px;color:#3b3a35}
+.mnote h2{font-family:var(--hand);font-weight:400;font-size:clamp(24px,6vw,32px);line-height:1.05;margin-bottom:12px}
+.mnote p{font-size:18px;line-height:1.22;margin-bottom:12px}
 .stats{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .stats span{font-family:var(--round);font-weight:500;font-size:13px;padding:3px 10px;border-radius:99px;background:#eef1f7;border:2px solid var(--ink)}
 .stats b{font-weight:700}
@@ -426,17 +472,17 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
           <div class="scr-bg"></div>
           <div class="scr-moon"></div>
           <div class="scr st-login">
-            <span class="kicker">Modul leadership</span>
-            <h1>Misi Engage</h1>
-            <p class="sub">Perjalanan singkat menuju Bulan</p>
+            <span class="kicker">Misi Leadership</span>
+            <h1>Misi Tim Engaged!</h1>
+            <p class="sub">Jaga semangat kru sampai mendarat di Bulan!</p>
             <form id="loginForm" class="login" autocomplete="off" novalidate>
               <input id="nameInput" maxlength="20" placeholder="Ketik namamu..." aria-label="Nama kamu" disabled enterkeyhint="go">
-              <button class="btn" id="loginBtn" type="submit" disabled>Masuk</button>
+              <button class="btn" id="loginBtn" type="submit" disabled>Mulai</button>
             </form>
           </div>
           <div class="scr st-load">
             <span class="kicker">Halo, <span id="loadName"></span></span>
-            <h1>Memuat misi...</h1>
+            <h1>Menyiapkan kapal...</h1>
             <div class="loadbar"><i></i></div>
           </div>
           <div class="scr st-done">
@@ -446,8 +492,8 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
           </div>
           <div class="scr st-fail">
             <span class="kicker">Sinyal terputus</span>
-            <h1>Kapal hilang</h1>
-            <p class="sub">Coba ulangi misinya</p>
+            <h1>Kapal hancur</h1>
+            <p class="sub">Yuk, coba ulangi misinya!</p>
           </div>
           <div class="taskbar"><span class="ic"></span><span class="ic o"></span><span class="tab">file.docx</span><span class="tm">13:47</span></div>
           <div class="scr-glare"></div>
@@ -474,19 +520,50 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
 
     <div class="ovl" id="endNote">
       <div class="paper">
-        <h2>Ketiduran ya, <span class="nm"></span>?</h2>
-        <p>Cuma mimpi, tapi kamu udah paham faktor-faktor yang ngaruh ke engagement. Lanjut nonton video berikutnya yuk!</p>
-        <button class="btn ghost" id="replayBtn">Ulangi misi</button>
+        <h2>Ternyata hanya mimpi</h2>
+        <p>Walaupun hanya mimpi, pembelajaran kamu tetap nyata!. Untuk memahami lebih dalam, yuk kita lanjut ke video berikutnya!</p>
+        <div class="perf-wrap">
+          <div class="perf-head">
+            <span class="perf-title">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L15 8L21 9L16.5 14L17.8 20L12 17L6.2 20L7.5 14L3 9L9 8Z" fill="#ffc94d" stroke="#14151b" stroke-width="2" stroke-linejoin="round"/></svg>
+              Rekap Misi Kapten <span class="nm"></span>
+            </span>
+            <span class="perf-badge">Misi Berhasil</span>
+          </div>
+          <div class="bigstats">
+            <div class="bs" id="bsHull">
+              <div class="bs-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3C16.5 6.5 17.5 12 16 19H8C6.5 12 7.5 6.5 12 3Z" fill="#f2792b" stroke="#14151b" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.5" fill="#fff" stroke="#14151b" stroke-width="1.8"/></svg>
+              </div>
+              <div class="bs-info">
+                <b id="sHull">100%</b>
+                <span>Kondisi kapal</span>
+              </div>
+            </div>
+            <div class="bs" id="bsMis">
+              <div class="bs-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#fff" stroke="#14151b" stroke-width="2"/><path d="M9 9L15 15M15 9L9 15" stroke="#14151b" stroke-width="2.2" stroke-linecap="round"/></svg>
+              </div>
+              <div class="bs-info">
+                <b id="sMis">0</b>
+                <span>Salah tebak</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="end-actions">
+          <button class="btn ghost" id="replayBtn">Ulangi misi</button>
+        </div>
       </div>
     </div>
     <div class="ovl" id="failNote">
       <div class="paper">
-        <h2>HAH?! Cuma mimpi...</h2>
-        <p>Kapalnya hancur, <span class="nm"></span>. Ingat lagi:</p>
+        <h2>HAH?! Untung cuma mimpi...</h2>
+        <p>Kapalmu hancur, <span class="nm"></span>! Yuk, ingat lagi 3 kunci tim yang Engaged:</p>
         <ul class="defs">
-          <li style="--c:var(--cM)"><b>Meaningfulness</b>Kerja terasa berarti?</li>
-          <li style="--c:var(--cP)"><b>Psychological Safety</b>Aman untuk bersuara?</li>
-          <li style="--c:var(--cA)"><b>Availability</b>Ada tenaga dan fokus?</li>
+          <li style="--c:var(--cM)"><b>Meaningfulness</b>Kerjaan terasa penting &amp; punya tujuan?</li>
+          <li style="--c:var(--cP)"><b>Psychological Safety</b>Aman buat ngomong &amp; tanya tanpa takut?</li>
+          <li style="--c:var(--cA)"><b>Availability</b>Punya cukup tenaga &amp; fokus buat kerja?</li>
         </ul>
         <button class="btn" id="retryBtn">Tidur lagi &amp; ulangi</button>
       </div>
@@ -494,7 +571,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
   </section>
 
   <!-- ================= COCKPIT ================= -->
-  <section id="cockpit" class="scene" aria-label="Kokpit roket">
+  <section id="cockpit" class="scene" aria-label="Kokpit kapal">
     <div class="space">
       <canvas id="stars"></canvas>
       <div class="grid" id="grid"></div>
@@ -519,6 +596,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
       <header class="overhead">
         <span class="bolt b1"></span><span class="bolt b2"></span>
         <div class="hud">
+          <button class="back-btn" id="backNameBtn" type="button" aria-label="Ubah nama dan ulang dari awal" title="Ubah nama dari awal">← Ubah Nama</button>
           <div class="chip">
             <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="14" fill="#2b303c"/><rect x="8" y="16" width="14" height="12" rx="5" fill="#f2792b" stroke="#14151b" stroke-width="2"/><circle cx="15" cy="11" r="7" fill="#fff" stroke="#14151b" stroke-width="2"/><circle cx="12.6" cy="10.6" r="1" fill="#14151b"/><circle cx="17.4" cy="10.6" r="1" fill="#14151b"/></svg>
             <span id="capName">Kpt.</span>
@@ -528,11 +606,11 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
         <div class="slots" id="slots">
           <button class="slot" data-cat="M" style="--c:var(--cM)" aria-label="Kirim ke Meaningfulness">
             <svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34 C8 25 4 18 6 12 C8 6 16 5 20 12 C24 5 32 6 34 12 C36 18 32 25 20 34Z" style="fill:var(--c)" stroke="#14151b" stroke-width="2.5" stroke-linejoin="round"/><path d="M11 14 Q12 10 16 10" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" opacity=".75"/></svg>
-            <span class="lbl">Meaningfulness</span><span class="sub">makna kerja</span><kbd>1</kbd>
+            <span class="lbl">Meaningfulness</span><span class="sub">arti &amp; tujuan kerja</span><kbd>1</kbd>
           </button>
           <button class="slot" data-cat="P" style="--c:var(--cP)" aria-label="Kirim ke Psychological Safety">
             <svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 L33 9 V19 C33 27 27 33 20 36 C13 33 7 27 7 19 V9 Z" style="fill:var(--c)" stroke="#14151b" stroke-width="2.5" stroke-linejoin="round"/><path d="M14 20 L18.5 24.5 L26.5 15.5" fill="none" stroke="#14151b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="lbl">Psychological Safety</span><span class="sub">rasa aman</span><kbd>2</kbd>
+            <span class="lbl">Psychological Safety</span><span class="sub">aman berpendapat</span><kbd>2</kbd>
           </button>
           <button class="slot" data-cat="A" style="--c:var(--cA)" aria-label="Kirim ke Availability">
             <svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="12" width="28" height="17" rx="3.5" fill="#1a1d26" style="stroke:var(--c)" stroke-width="2.5"/><rect x="32.5" y="16.5" width="4" height="8" rx="1.5" style="fill:var(--c)"/><rect x="7.5" y="15.5" width="6.5" height="10" rx="1.5" style="fill:var(--c)"/><rect x="15.5" y="15.5" width="6.5" height="10" rx="1.5" style="fill:var(--c)" opacity=".55"/></svg>
@@ -550,7 +628,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
       <footer class="dash">
         <span class="rv r1" aria-hidden="true"></span><span class="rv r2" aria-hidden="true"></span>
         <div class="leds" aria-hidden="true"><i></i><i></i><i></i></div>
-        <span class="plate" aria-hidden="true">ENGAGE-01</span>
+        <span class="plate" aria-hidden="true">ENGAGED-01</span>
         <div class="sticker" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 2.5 L25 14 L37.5 15 L28 23.5 L31 36.5 L20 29.5 L9 36.5 L12 23.5 L2.5 15 L15 14Z" fill="#fff" stroke="#fff" stroke-width="5" stroke-linejoin="round"/><path d="M20 4.5 L24.3 14.6 L35.2 15.6 L26.9 23 L29.5 34.2 L20 28.2 L10.5 34.2 L13.1 23 L4.8 15.6 L15.7 14.6Z" fill="#ffc94d" stroke="#14151b" stroke-width="2.2" stroke-linejoin="round"/><circle cx="16.5" cy="20" r="1.4" fill="#14151b"/><circle cx="23.5" cy="20" r="1.4" fill="#14151b"/><path d="M17 24 Q20 26.5 23 24" fill="none" stroke="#14151b" stroke-width="1.6" stroke-linecap="round"/></svg></div>
         <span class="vent vl" aria-hidden="true"></span><span class="vent vr" aria-hidden="true"></span>
         <div class="dial dl" aria-hidden="true"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="#1a1d26" stroke="#14151b" stroke-width="4"/><path d="M15 54 A28 28 0 1 1 65 54" fill="none" stroke="#3a4050" stroke-width="6" stroke-linecap="round"/><path d="M15 54 A28 28 0 0 1 24 20" fill="none" stroke="#7fe08c" stroke-width="6" stroke-linecap="round"/><g class="needle"><line x1="40" y1="40" x2="40" y2="17" stroke="#ff9a6a" stroke-width="3.5" stroke-linecap="round"/></g><circle cx="40" cy="40" r="5" fill="#fffdf7" stroke="#14151b" stroke-width="2"/></svg>Dorongan</div>
@@ -561,9 +639,16 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
           <div class="bay">
             <div class="slit"></div>
             <div class="card gone" id="card" role="group" aria-label="Kartu sinyal kru">
-              <div class="card-h"><span class="av" id="cAv">D</span><span>Sinyal dari <b id="cWho">-</b></span><span class="left" id="cLeft"></span></div>
+              <div class="card-h"><span class="av" id="cAv">D</span><span>Curhatan <b id="cWho">-</b></span><span class="left" id="cLeft"></span></div>
               <p class="card-t" id="cText"></p>
-              <div class="card-f">Seret ke panel, atau ketuk panelnya</div>
+              <div class="card-f">Tarik kartu ke panel atas, atau ketuk panelnya!</div>
+            </div>
+            <div id="tutGesture" aria-hidden="true">
+              <span class="ring"></span>
+              <svg viewBox="0 0 64 64">
+                <path d="M24 10 C24 6 30 6 30 10 V28 C31 26 35 26 36 29 C38 27 42 28 43 31 C45 30 48 32 48 36 V46 C48 54 41 59 32 59 H26 C19 59 14 54 12 47 L8 36 C7 33 10 30 13 31 L20 35 V10 Z" fill="#fffdf7" stroke="#14151b" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+                <path d="M27 3 L21 9 M27 3 L33 9 M27 3 V11" fill="none" stroke="#ffc94d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
           </div>
         </div>
@@ -580,13 +665,18 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
     <div class="ovl brief" id="brief">
       <div class="panel">
         <span class="ph"><i></i>Transmisi masuk</span>
-        <h2>Siap terbang, Kapten <span class="nm"></span>?</h2>
-        <p>Kirim tiap sinyal kru ke panel yang tepat.</p>
+        <h2>Siap meluncur, Kapten <span class="nm"></span>?</h2>
+        <p>Kru kapal lagi butuh perhatian! Tarik kartu curhatan kru ke panel solusi yang pas di atas.</p>
+        <div class="tut-demo" aria-hidden="true">
+          <div class="td-slots"><span class="td-s"></span><span class="td-s"></span><span class="td-s"></span></div>
+          <div class="td-card"></div>
+          <svg class="td-hand" viewBox="0 0 64 64"><path d="M24 12 C24 8 30 8 30 12 V28 C31 26 35 26 36 29 C38 27 42 28 43 31 C45 30 48 32 48 36 V46 C48 54 41 59 32 59 H26 C19 59 14 54 12 47 L8 36 C7 33 10 30 13 31 L20 35 V12 Z" fill="#fffdf7" stroke="#14151b" stroke-width="4" stroke-linejoin="round"/></svg>
+        </div>
         <ul class="rules">
-          <li><i class="ok">✓</i>Tepat, Bulan makin dekat</li>
-          <li><i class="no">✕</i>Keliru, kapal rusak</li>
+          <li><i class="ok">✓</i>Panel tepat, kapal melesat ke Bulan!</li>
+          <li><i class="no">✕</i>Salah pilih, kapal oleng &amp; rusak!</li>
         </ul>
-        <button class="btn big" id="startBtn">Nyalakan mesin</button>
+        <button class="btn big" id="startBtn">Gas, Meluncur!</button>
       </div>
     </div>
   </section>
@@ -639,12 +729,8 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-o
     <div class="flag" aria-hidden="true"><div class="pole"></div><div class="cloth"><span id="flagName"></span></div></div>
 
     <div class="mnote" id="mnote">
-      <span class="mtag">Misi berhasil</span>
+      <span class="mtag">Misi berhasil!</span>
       <h2>Mendarat, Kapten <span class="nm"></span>!</h2>
-      <div class="bigstats">
-        <div class="bs" id="bsHull"><b id="sHull">100%</b><span>Kondisi kapal</span></div>
-        <div class="bs" id="bsMis"><b id="sMis">0</b><span>Salah tebak</span></div>
-      </div>
       <button class="btn big" id="wakeBtn">Bangun</button>
     </div>
   </section>
@@ -677,12 +763,12 @@ const CATS={
   A:{name:'Availability',color:'var(--cA)'}
 };
 const CASES=[
-  {who:'Dimas',cat:'M',text:'Akhir-akhir ini kerjaanku kerasa cuma rutinitas, kayak nggak ada dampaknya buat siapa-siapa.',why:'Rasa bahwa kerjaannya penting mulai hilang.',clue:'Dimas masih kuat kerja. Yang hilang itu rasa “buat apa”-nya.'},
-  {who:'Sari',cat:'M',text:'Aku nggak ngerti tugas yang kukerjain ini nyambungnya ke tujuan tim di mana.',why:'Ia belum melihat kontribusinya ke tujuan tim.',clue:'Apa yang belum Sari temukan dari tugasnya?'},
-  {who:'Rina',cat:'P',text:'Aku punya ide perbaikan, tapi takut dibilang sok tahu kalau ngomong di rapat.',why:'Takut dinilai saat bicara, rasa amannya lagi rendah.',clue:'Rina punya ide. Apa yang bikin dia nggak berani ngomong?'},
-  {who:'Maya',cat:'P',text:'Instruksi barunya bikin bingung, tapi aku sungkan nanya biar nggak dianggap lambat.',why:'Sungkan bertanya karena takut dicap lambat.',clue:'Maya sebenarnya bisa bertanya. Apa yang ia khawatirkan?'},
-  {who:'Andi',cat:'A',text:'Target lagi numpuk, badanku capek banget sampai susah fokus.',why:'Tenaga dan fokusnya lagi terkuras.',clue:'Perhatikan kondisi badan dan fokus Andi saat ini.'},
-  {who:'Lestari',cat:'A',text:'Pikiranku lagi kebagi sama urusan keluarga, jadi sering nggak konsen pas kerja.',why:'Energi dan perhatiannya tersita urusan pribadi.',clue:'Lestari tetap peduli kerjaan. Tapi pikirannya lagi ke mana?'}
+  {who:'Dimas',cat:'M',text:'Akhir-akhir ini kerjaanku kerasa cuma rutinitas, kayak nggak ada dampaknya buat siapa-siapa.',why:'Dimas mulai kehilangan makna dan arti penting dari pekerjaannya.',clue:'Dimas masih kuat kerja, tapi kehilangan rasa “buat apa” ia mengerjakannya.'},
+  {who:'Sari',cat:'M',text:'aku ngga ngerti tugas yang kurkerjain ini arahnya kemana',why:'Sari belum melihat bagaimana tugasnya berdampak ke tujuan tim.',clue:'Apa yang belum Sari pahami dari arah tugas yang dikerjakannya?'},
+  {who:'Rina',cat:'P',text:'Aku punya ide perbaikan, tapi takut dibilang sok tahu kalau ngomong di rapat.',why:'Rina takut dinilai negatif saat bicara, rasa amannya sedang rendah.',clue:'Rina punya ide bagus. Apa yang bikin dia ragu buat bersuara?'},
+  {who:'Maya',cat:'P',text:'Instruksi barunya bikin bingung, tapi aku sungkan nanya biar nggak dianggap lambat.',why:'Maya sungkan bertanya karena takut dicap lambat oleh sekitar.',clue:'Maya sebenarnya butuh bertanya. Apa yang ia takutkan?'},
+  {who:'Andi',cat:'A',text:'Target lagi numpuk, badanku capek banget sampai susah fokus.',why:'Tenaga fisik dan fokus Andi sedang terkuras habis.',clue:'Perhatikan kondisi tenaga dan fokus Andi saat ini.'},
+  {who:'Lestari',cat:'A',text:'Pikiranku lagi kebagi sama urusan keluarga, jadi sering nggak konsen pas kerja.',why:'Energi dan perhatian Lestari sedang tersita oleh urusan pribadi.',clue:'Lestari tetap peduli kerjaan, tapi fokus dan energinya sedang terbagi.'}
 ];
 const AVC=['#ffd36b','#ff9fb8','#9fd3ff','#b9f0a8','#ffb98a','#d6c2ff'];
 const TOTAL=CASES.length, MAXH=4, DIST=384400;
@@ -692,73 +778,125 @@ const world=Q('#world'), capEl=Q('#caption'), zzz=Q('#zzz'), fadeEl=Q('#fade');
 const office=Q('#office'), cockpit=Q('#cockpit'), ml=Q('#moonland'), cp=Q('#cp'), screen=Q('#screen');
 const form=Q('#loginForm'), input=Q('#nameInput'), loginBtn=Q('#loginBtn');
 const card=Q('#card'), slots=QA('.slot'), fb=Q('#fb'), moonEl=Q('#moonEl'), atmo=Q('#atmo'), grid=Q('#grid');
-const lidT=Q('.lid.top'), lidB=Q('.lid.bot');
+const lidT=Q('.lid.top'), lidB=Q('.lid.bot'), tutGesture=Q('#tutGesture');
 
-let NAME='', busy=false, sentDone=false;
+let NAME='', busy=false, sentDone=false, tutShown=false;
 
 /* clock ticks */
 (()=>{const g=Q('#ticks');let h='';for(let i=0;i<12;i++){const big=i%3===0;h+=`<line x1="50" y1="${big?9:10}" x2="50" y2="${big?17:14}" stroke="#14151b" stroke-width="${big?3.5:2}" stroke-linecap="round" transform="rotate(${i*30} 50 50)"/>`}g.innerHTML=h})();
 
-/* ================= AUDIO (Web Audio, tanpa file eksternal) ================= */
+/* ================= AUDIO (Retro Spaceship BGM + SFX) ================= */
 const mtof=m=>440*Math.pow(2,(m-69)/12);
 const CHORDS=[
-  {bass:45,pad:[57,60,64,67,71]},
-  {bass:41,pad:[53,57,60,64]},
-  {bass:48,pad:[55,59,60,64]},
-  {bass:40,pad:[55,59,62,67]}
+  {bass:45,arp:[57,60,64,69,64,60,64,71],pad:[57,60,64,71]},
+  {bass:41,arp:[53,57,60,65,60,57,60,69],pad:[53,57,60,69]},
+  {bass:48,arp:[55,60,64,67,64,60,67,72],pad:[55,60,64,72]},
+  {bass:43,arp:[55,59,62,67,62,59,64,71],pad:[55,59,62,67]}
 ];
-const PENTA=[69,72,74,76,79,81,84];
-const BAR=4.8;
+const STEP=0.14; // 16th-note retro spaceship groove (~107 BPM)
 const A={
-  ctx:null,on:true,timer:null,
+  ctx:null,on:true,timer:null,stepIdx:0,next:0,wantMusic:false,
   init(){
     if(this.ctx){ if(this.ctx.state==='suspended') this.ctx.resume(); return; }
     const C=window.AudioContext||window.webkitAudioContext; if(!C) return;
     const c=this.ctx=new C();
-    this.master=c.createGain(); this.master.gain.value=.85; this.master.connect(c.destination);
-    this.mus=c.createGain(); this.mus.gain.value=0; this.mus.connect(this.master);
+    this.master=c.createGain(); this.master.gain.value=.88; this.master.connect(c.destination);
+    this.mus=c.createGain(); this.mus.gain.value=this.on?.56:0; this.mus.connect(c.destination);
     this.musIn=c.createGain(); this.musIn.connect(this.mus);
-    const dl=c.createDelay(1); dl.delayTime.value=.42;
-    const fbk=c.createGain(); fbk.gain.value=.38;
-    const dlf=c.createBiquadFilter(); dlf.type='lowpass'; dlf.frequency.value=2200;
+    const dl=c.createDelay(1); dl.delayTime.value=STEP*3;
+    const fbk=c.createGain(); fbk.gain.value=.3;
+    const dlf=c.createBiquadFilter(); dlf.type='lowpass'; dlf.frequency.value=2100;
     this.arpIn=c.createGain(); this.arpIn.connect(this.musIn); this.arpIn.connect(dl);
     dl.connect(dlf); dlf.connect(fbk); fbk.connect(dl); dlf.connect(this.musIn);
-    this.fx=c.createGain(); this.fx.gain.value=.7; this.fx.connect(this.master);
+    this.fx=c.createGain(); this.fx.gain.value=.75; this.fx.connect(this.master);
     const len=c.sampleRate*2, b=c.createBuffer(1,len,c.sampleRate), d=b.getChannelData(0);
     for(let i=0;i<len;i++) d[i]=Math.random()*2-1;
     this.noiseBuf=b;
   },
   startMusic(){
-    if(!this.ctx) this.init(); if(!this.ctx||this.timer) return;
-    this.bar=0; this.next=this.ctx.currentTime+.15;
-    this.timer=setInterval(()=>this.sched(),250); this.sched(); this.apply();
+    this.wantMusic=true;
+    if(!this.ctx) this.init();
+    if(!this.ctx) return;
+    if(this.ctx.state==='suspended') this.ctx.resume();
+    this.apply();
+    if(!this.on) return;
+    if(this.timer) return;
+    this.next=this.ctx.currentTime+.06;
+    this.timer=setInterval(()=>this.sched(),60);
+    this.sched();
   },
-  apply(){ if(!this.ctx) return; const t=this.ctx.currentTime; this.mus.gain.cancelScheduledValues(t); this.mus.gain.setTargetAtTime(this.on?.5:0,t,.6); },
-  sched(){ const c=this.ctx; while(this.next<c.currentTime+1.2){ this.playBar(this.next,this.bar++); this.next+=BAR; } },
-  playBar(t,i){
-    const ch=CHORDS[i%4];
-    ch.pad.forEach((m,k)=>this.pad(mtof(m),t+k*.05,BAR+1.3,.032));
-    this.bass(mtof(ch.bass),t,BAR,.11);
-    for(let s=0;s<8;s++) if(Math.random()<.42) this.pluck(mtof(PENTA[Math.floor(Math.random()*PENTA.length)]),t+s*BAR/8+.02,.05);
+  stopLoop(){
+    if(this.timer){ clearInterval(this.timer); this.timer=null; }
+  },
+  apply(){
+    if(!this.ctx) return;
+    const t=this.ctx.currentTime;
+    this.mus.gain.cancelScheduledValues(t);
+    this.mus.gain.setValueAtTime(this.mus.gain.value,t);
+    this.mus.gain.linearRampToValueAtTime(this.on?.56:0,t+.05);
+    if(!this.on){
+      this.stopLoop();
+    }else if(this.wantMusic&&!this.timer){
+      this.next=this.ctx.currentTime+.06;
+      this.timer=setInterval(()=>this.sched(),60);
+      this.sched();
+    }
+  },
+  sched(){
+    if(!this.on||!this.ctx) return;
+    const c=this.ctx;
+    if(this.next<c.currentTime) this.next=c.currentTime+.04;
+    while(this.next<c.currentTime+.28){
+      this.playStep(this.next,this.stepIdx++);
+      this.next+=STEP;
+    }
+  },
+  playStep(t,s){
+    const bar=Math.floor(s/16)%4, st=s%16, ch=CHORDS[bar];
+    if(st===0){
+      ch.pad.forEach((m,k)=>this.pad(mtof(m),t+k*.02,STEP*16+.2,.024));
+    }
+    if(st%2===0){
+      const oct=(st%4===2)?12:0;
+      const fifth=(st===14)?7:0;
+      this.bassPulse(mtof(ch.bass+oct+fifth),t,STEP*1.85,.085);
+    }
+    const arpNote=ch.arp[st%8]+((st>=8&&st%4===0)?12:0);
+    if(st%2===0||st===7||st===15){
+      this.arpBlip(mtof(arpNote),t,STEP*.9,.036);
+    }
+    if(st%4===2){
+      this.hat(t,.022);
+    }
   },
   pad(f,t,d,v){
     const c=this.ctx,g=c.createGain(),lp=c.createBiquadFilter();
-    lp.type='lowpass'; lp.frequency.value=1100;
-    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+1.4); g.gain.setValueAtTime(v,t+d-1.4); g.gain.linearRampToValueAtTime(0,t+d);
-    [-7,7].forEach(dt=>{const o=c.createOscillator();o.type='triangle';o.frequency.value=f;o.detune.value=dt;o.connect(lp);o.start(t);o.stop(t+d+.05);});
+    lp.type='lowpass'; lp.frequency.value=1250;
+    g.gain.setValueAtTime(.0001,t); g.gain.linearRampToValueAtTime(v,t+.25); g.gain.setValueAtTime(v,t+d-.3); g.gain.linearRampToValueAtTime(.0001,t+d);
+    [-6,6].forEach(dt=>{const o=c.createOscillator();o.type='triangle';o.frequency.value=f;o.detune.value=dt;o.connect(lp);o.start(t);o.stop(t+d+.04);});
     lp.connect(g); g.connect(this.musIn);
   },
-  bass(f,t,d,v){
-    const c=this.ctx,o=c.createOscillator(),g=c.createGain();
-    o.type='sine'; o.frequency.value=f;
-    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.4); g.gain.linearRampToValueAtTime(v*.6,t+d*.7); g.gain.linearRampToValueAtTime(0,t+d);
-    o.connect(g); g.connect(this.musIn); o.start(t); o.stop(t+d+.05);
+  bassPulse(f,t,d,v){
+    const c=this.ctx,o=c.createOscillator(),lp=c.createBiquadFilter(),g=c.createGain();
+    o.type='sawtooth'; o.frequency.setValueAtTime(f,t);
+    lp.type='lowpass'; lp.Q.value=2.5;
+    lp.frequency.setValueAtTime(780,t); lp.frequency.exponentialRampToValueAtTime(190,t+d);
+    g.gain.setValueAtTime(.0001,t); g.gain.linearRampToValueAtTime(v,t+.012); g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    o.connect(lp); lp.connect(g); g.connect(this.musIn); o.start(t); o.stop(t+d+.03);
   },
-  pluck(f,t,v){
-    const c=this.ctx,o=c.createOscillator(),g=c.createGain();
-    o.type='sine'; o.frequency.value=f;
-    g.gain.setValueAtTime(.0001,t); g.gain.exponentialRampToValueAtTime(v,t+.01); g.gain.exponentialRampToValueAtTime(.0001,t+1.3);
-    o.connect(g); g.connect(this.arpIn); o.start(t); o.stop(t+1.4);
+  arpBlip(f,t,d,v){
+    const c=this.ctx,o=c.createOscillator(),lp=c.createBiquadFilter(),g=c.createGain();
+    o.type='square'; o.frequency.setValueAtTime(f,t);
+    lp.type='lowpass'; lp.frequency.setValueAtTime(1900,t);
+    g.gain.setValueAtTime(.0001,t); g.gain.linearRampToValueAtTime(v,t+.008); g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    o.connect(lp); lp.connect(g); g.connect(this.arpIn); o.start(t); o.stop(t+d+.03);
+  },
+  hat(t,v){
+    const c=this.ctx,s=c.createBufferSource(),hp=c.createBiquadFilter(),g=c.createGain();
+    s.buffer=this.noiseBuf;
+    hp.type='highpass'; hp.frequency.value=5500;
+    g.gain.setValueAtTime(.0001,t); g.gain.linearRampToValueAtTime(v,t+.004); g.gain.exponentialRampToValueAtTime(.0001,t+.045);
+    s.connect(hp); hp.connect(g); g.connect(this.musIn); s.start(t); s.stop(t+.05);
   },
   tone(f,d,o={}){
     const c=this.ctx; if(!c) return;
@@ -793,19 +931,25 @@ const A={
   fanfare(){[523,659,784,1047].forEach((f,i)=>this.tone(f,.55,{type:'triangle',v:.13,t:i*.13}));[523,784,1047].forEach(f=>this.tone(f,1.4,{type:'triangle',v:.07,t:.56}))}
 };
 const bgmBtn=Q('#bgm');
-bgmBtn.addEventListener('click',()=>{
-  A.init(); A.on=!A.on;
+bgmBtn.addEventListener('click',e=>{
+  e.stopPropagation();
+  A.init();
+  A.on=!A.on;
   bgmBtn.classList.toggle('off',!A.on);
   bgmBtn.setAttribute('aria-label',A.on?'Matikan musik':'Nyalakan musik');
   if(A.on) A.startMusic();
-  A.apply();
+  else A.apply();
 });
-document.addEventListener('pointerdown',()=>A.init(),{passive:true});
+document.addEventListener('pointerdown',e=>{
+  if(e.target.closest('#bgm')) return;
+  A.init();
+},{passive:true});
 /* jaga agar layar tidak pernah ter-scroll (mis. saat fokus berpindah) */
 document.addEventListener('scroll',e=>{const t=e.target;if(t&&t.nodeType===1&&(t.id==='app'||t.id==='world'||t.classList.contains('scene')||t.classList.contains('cp'))){t.scrollTop=0;t.scrollLeft=0;}},true);
 document.addEventListener('visibilitychange',()=>{ if(!A.ctx) return; document.hidden?A.ctx.suspend():A.ctx.resume(); });
 
 /* ================= HELPERS ================= */
+let sessionTok=0;
 function lids(p,ms=300,ease='cubic-bezier(.4,0,.2,1)'){
   lidT.style.transition=lidB.style.transition=`transform ${ms}ms ${ease}`;
   const t=5-p*105;
@@ -867,7 +1011,7 @@ function loop(t){
     if(streak){
       const tz=Math.min(1,pz+speed*8);
       cx.strokeStyle=col; cx.lineWidth=r; cx.beginPath();
-      cx.moveTo(vx+s.x/tz*sc,vy+s.y/tz*sc); cx.lineTo(px,py); cx.stroke();
+      cx.moveTo(vx+s.x/tz*sc,vy+s.y/tz*sc); cx.moveTo(vx+s.x/tz*sc,vy+s.y/tz*sc); cx.lineTo(px,py); cx.stroke();
     }else{
       cx.fillStyle=col; cx.beginPath(); cx.arc(px,py,r,0,6.283); cx.fill();
     }
@@ -878,22 +1022,23 @@ window.addEventListener('resize',()=>{ if(cockpit.classList.contains('active')){
 
 /* ================= INTRO (POV ngantuk) ================= */
 async function intro(){
+  const tok=++sessionTok;
   setBlur(8,0,'brightness(.8)');
-  await wait(700);
-  await lids(.3,650); await wait(450);
-  await lids(0,200); await wait(250);
+  await wait(700); if(tok!==sessionTok) return;
+  await lids(.3,650); await wait(450); if(tok!==sessionTok) return;
+  await lids(0,200); await wait(250); if(tok!==sessionTok) return;
   setBlur(5,500,'brightness(.9)');
-  await lids(.55,520);
+  await lids(.55,520); if(tok!==sessionTok) return;
   caption('( hoaam... habis makan siang, ngantuk )',2600);
-  await wait(700);
-  await lids(.07,160); await wait(120);
+  await wait(700); if(tok!==sessionTok) return;
+  await lids(.07,160); await wait(120); if(tok!==sessionTok) return;
   setBlur(2,400);
-  await lids(.82,380); await wait(500);
-  await lids(0,110); await wait(80);
+  await lids(.82,380); await wait(500); if(tok!==sessionTok) return;
+  await lids(0,110); await wait(80); if(tok!==sessionTok) return;
   setBlur(0,500);
   await lids(1,420);
-  await wait(500);
-  caption('( login dulu deh... )',3000);
+  await wait(500); if(tok!==sessionTok) return;
+  caption('( isi nama dulu deh... )',3000);
   input.disabled=false; loginBtn.disabled=false;
   if(matchMedia('(pointer:fine)').matches) input.focus();
 }
@@ -914,44 +1059,68 @@ form.addEventListener('submit',e=>{
 });
 
 async function fallAsleep(){
+  const tok=++sessionTok;
   screen.dataset.state='load';
   caption('( lama... merem bentar ah )');
-  await wait(2300);
+  await wait(2300); if(tok!==sessionTok) return;
   world.style.transform='rotate(-2deg) scale(1.03)'; setBlur(2,1400);
-  await lids(.45,1300); await wait(350);
-  await lids(.82,450); await wait(550);
+  await lids(.45,1300); await wait(350); if(tok!==sessionTok) return;
+  await lids(.82,450); await wait(550); if(tok!==sessionTok) return;
   world.style.transform='rotate(-5deg) scale(1.08) translateY(2%)'; setBlur(6,1600);
-  await lids(.18,1500); await wait(250);
-  await lids(0,800);
+  await lids(.18,1500); await wait(250); if(tok!==sessionTok) return;
+  await lids(0,800); if(tok!==sessionTok) return;
   hideCap();
   A.startMusic();
-  await doze(2000);
-  await enterDream();
+  await doze(2000); if(tok!==sessionTok) return;
+  await enterDream(tok);
 }
 
 /* ================= DREAM / COCKPIT ================= */
-async function enterDream(){
+async function enterDream(tok=sessionTok){
   QA('.ovl.show').forEach(o=>o.classList.remove('show'));
   show('cockpit'); resetGame();
   resetWorldTransform();
   setBlur(10,0,'brightness(1.4) saturate(1.3)');
-  await wait(400);
-  await lids(.35,700); await wait(250);
-  await lids(0,180);
+  await wait(400); if(tok!==sessionTok) return;
+  await lids(.35,700); await wait(250); if(tok!==sessionTok) return;
+  await lids(0,180); if(tok!==sessionTok) return;
   setBlur(5,600,'brightness(1.2)');
-  await lids(.7,500); await wait(350);
-  await lids(.15,140);
+  await lids(.7,500); await wait(350); if(tok!==sessionTok) return;
+  await lids(.15,140); if(tok!==sessionTok) return;
   setBlur(0,700);
-  await lids(1,550);
-  caption('( Lho... kokpit roket?! )',2400);
-  await wait(2000);
+  await lids(1,550); if(tok!==sessionTok) return;
+  caption('( Lho... kokpit kapal?! )',2400);
+  await wait(2000); if(tok!==sessionTok) return;
   Q('#brief').classList.add('show');
 }
+
+/* Tombol Back untuk ubah nama dari awal lagi */
+Q('#backNameBtn').addEventListener('click',()=>{
+  sessionTok++;
+  A.blip();
+  canAnswer=false; landingNow=false; drag=null; busy=false;
+  tutGesture.classList.remove('show');
+  QA('.ovl.show').forEach(o=>o.classList.remove('show'));
+  fb.className='fb';
+  zzz.classList.remove('show');
+  fadeEl.classList.remove('show');
+  hideCap();
+  resetWorldTransform();
+  setBlur(0,0);
+  lids(1,0);
+  show('office');
+  screen.dataset.state='login';
+  input.disabled=false;
+  loginBtn.disabled=false;
+  input.focus();
+  input.select();
+});
 
 let queue=[],health=MAXH,done=0,mistakes=0,current=null,canAnswer=false,landingNow=false;
 
 function resetGame(){
-  queue=shuffle(CASES.slice()); health=MAXH; done=0; mistakes=0; current=null; canAnswer=false; landingNow=false;
+  queue=shuffle(CASES.slice()); health=MAXH; done=0; mistakes=0; current=null; canAnswer=false; landingNow=false; tutShown=false;
+  tutGesture.classList.remove('show');
   cockpit.classList.remove('lvl1','lvl2','lvl3','boom','dead');
   cp.classList.remove('shake','bigshake','rumble');
   Q('#cracks').innerHTML='';
@@ -1001,15 +1170,20 @@ function thrust(ms=1500){
 }
 
 const countEl=Q('#count');
-async function countdown(){
-  for(const n of ['3','2','1']){ countEl.textContent=n; countEl.classList.remove('word'); restart(countEl,'pop'); A.count(); await wait(700); }
+async function countdown(tok){
+  for(const n of ['3','2','1']){ if(tok!==sessionTok) return; countEl.textContent=n; countEl.classList.remove('word'); restart(countEl,'pop'); A.count(); await wait(700); }
+  if(tok!==sessionTok) return;
   countEl.textContent='Meluncur!'; countEl.classList.add('word'); restart(countEl,'pop'); A.go();
   thrust(1700); await wait(1000);
 }
 Q('#startBtn').addEventListener('click',async()=>{
   if(!Q('#brief').classList.contains('show')) return;
+  const tok=sessionTok;
   Q('#brief').classList.remove('show');
-  await wait(300); await countdown(); await wait(400); nextCard();
+  await wait(300); if(tok!==sessionTok) return;
+  await countdown(tok); if(tok!==sessionTok) return;
+  await wait(400); if(tok!==sessionTok) return;
+  nextCard();
 });
 
 function nextCard(){
@@ -1023,6 +1197,7 @@ function nextCard(){
   Q('#cText').textContent=`“${current.text}”`;
   card.style.transition='none'; card.style.transform=''; card.style.opacity=''; void card.offsetWidth; card.style.transition='';
   card.classList.remove('gone'); restart(card,'enter');
+  if(!tutShown){ tutGesture.classList.add('show'); }
   A.blip(); canAnswer=true;
 }
 card.addEventListener('animationend',()=>card.classList.remove('enter'));
@@ -1032,6 +1207,7 @@ let drag=null;
 function slotAt(x,y){ for(const s of slots){ const r=s.getBoundingClientRect(); if(x>r.left-14&&x<r.right+14&&y>r.top-14&&y<r.bottom+20) return s; } return null; }
 card.addEventListener('pointerdown',e=>{
   if(!canAnswer) return;
+  tutGesture.classList.remove('show');
   drag={id:e.pointerId,x:e.clientX,y:e.clientY,moved:false,over:null};
   try{card.setPointerCapture(e.pointerId);}catch(_){}
   card.classList.remove('enter'); card.classList.add('drag');
@@ -1050,6 +1226,7 @@ function endDrag(e){
   slots.forEach(s=>s.classList.remove('hover'));
   if(d.over&&e.type==='pointerup'){ answer(d.over); return; }
   card.style.transform='';
+  if(!tutShown) tutGesture.classList.add('show');
   if(!d.moved) slots.forEach(s=>restart(s,'hint'));
 }
 card.addEventListener('pointerup',endDrag);
@@ -1065,6 +1242,8 @@ document.addEventListener('keydown',e=>{
 
 async function answer(slot){
   if(!canAnswer) return; canAnswer=false;
+  tutShown=true; tutGesture.classList.remove('show');
+  const tok=sessionTok;
   const cat=slot.dataset.cat;
   const cr=card.getBoundingClientRect(), sr=slot.getBoundingClientRect();
   const tr=getComputedStyle(card).transform, M=window.DOMMatrix||window.WebKitCSSMatrix;
@@ -1076,7 +1255,7 @@ async function answer(slot){
   card.style.transform=`translate(${dx}px,${dy}px) scale(.12) rotate(8deg)`;
   card.style.opacity='0';
   A.whoosh();
-  await wait(440);
+  await wait(440); if(tok!==sessionTok) return;
   card.classList.add('gone'); card.style.transition=''; card.style.opacity='';
   const ok=cat===current.cat;
   if(ok){
@@ -1086,7 +1265,7 @@ async function answer(slot){
   }else{
     mistakes++; health--; restart(slot,'bad'); A.wrong();
     queue.push(current); updateHull(); damage();
-    if(health<=0){ await wait(800); explode(); return; }
+    if(health<=0){ await wait(800); if(tok!==sessionTok) return; explode(tok); return; }
     showFb(false);
   }
 }
@@ -1100,16 +1279,18 @@ function showFb(ok){
     Q('#fbT').textContent=`${PRAISE[done%PRAISE.length]}, Kapten ${NAME}!`;
     Q('#fbP').innerHTML=`<span class="tagc" style="--c:${c.color}">${c.name}</span><br>${esc(current.why)}`;
   }else{
-    Q('#fbT').textContent='Belum pas...';
-    Q('#fbP').innerHTML=`<b>Clue:</b> ${esc(current.clue)}`;
+    Q('#fbT').textContent='Kurang pas, Kapten!';
+    Q('#fbP').innerHTML=`<b>Petunjuk:</b> ${esc(current.clue)}`;
   }
   Q('#fbBtn').textContent=(!queue.length&&ok)?'Mendarat di Bulan':'Lanjut';
   requestAnimationFrame(()=>fb.classList.add('show'));
   setTimeout(()=>Q('#fbBtn').focus({preventScroll:true}),350);
 }
 Q('#fbBtn').addEventListener('click',async()=>{
+  const tok=sessionTok;
   fb.classList.remove('show'); slots.forEach(s=>s.classList.remove('reveal'));
-  await wait(250); nextCard();
+  await wait(250); if(tok!==sessionTok) return;
+  nextCard();
 });
 
 /* ---------- damage ---------- */
@@ -1164,30 +1345,31 @@ function debris(){
     anim.onfinish=()=>d.remove();
   }
 }
-async function explode(){
+async function explode(tok=sessionTok){
   canAnswer=false;
   for(let i=Q('#cracks').children.length;i<6;i++) addCrack(i);
   A.explode(); restart(cp,'bigshake');
   Q('#hitflash').animate([{opacity:0,background:'#fff'},{opacity:1,background:'#fff'},{opacity:0,background:'#ffb02e'}],{duration:900});
-  await wait(250);
+  await wait(250); if(tok!==sessionTok) return;
   debris(); cockpit.classList.add('boom'); target=0;
-  await wait(1300);
+  await wait(1300); if(tok!==sessionTok) return;
   cockpit.classList.add('dead');
-  await wait(2300);
-  await lids(0,260);
-  wakeFail();
+  await wait(2300); if(tok!==sessionTok) return;
+  await lids(0,260); if(tok!==sessionTok) return;
+  wakeFail(tok);
 }
 
 /* ---------- landing ---------- */
 async function landing(){
+  const tok=sessionTok;
   canAnswer=false; landingNow=true;
   sendComplete();
   target=WARP; cp.classList.add('rumble'); A.thrust(2.6);
   moonEl.style.transition='width 2.3s cubic-bezier(.6,0,.9,.5)';
   moonEl.style.width=(Math.max(appW(),appH())*3)+'px';
-  await wait(2100);
+  await wait(2100); if(tok!==sessionTok) return;
   fadeEl.classList.add('show');
-  await wait(750);
+  await wait(750); if(tok!==sessionTok) return;
   cp.classList.remove('rumble'); target=BASE;
   show('moonland');
   Q('#sHull').textContent=Math.round(health/MAXH*100)+'%';
@@ -1197,14 +1379,14 @@ async function landing(){
   Q('#bsMis').style.setProperty('--bsc',mistakes===0?'#dff7e6':mistakes<=2?'#fff1c9':'#ffdede');
   Q('#mnote').classList.remove('show');
   ml.classList.remove('play'); void ml.offsetWidth;
-  await wait(150);
+  await wait(150); if(tok!==sessionTok) return;
   fadeEl.classList.remove('show');
   ml.classList.add('play');
   A.thrust(2.7);
-  setTimeout(()=>A.thud(),2600);
-  setTimeout(()=>A.blip(),3500);
-  setTimeout(()=>A.fanfare(),4600);
-  await wait(5400);
+  setTimeout(()=>{ if(tok===sessionTok) A.thud(); },2600);
+  setTimeout(()=>{ if(tok===sessionTok) A.blip(); },3500);
+  setTimeout(()=>{ if(tok===sessionTok) A.fanfare(); },4600);
+  await wait(5400); if(tok!==sessionTok) return;
   Q('#mnote').classList.add('show');
   setTimeout(()=>Q('#wakeBtn').focus({preventScroll:true}),400);
 }
@@ -1212,37 +1394,41 @@ async function landing(){
 /* ---------- bangun ---------- */
 Q('#wakeBtn').addEventListener('click',wakeSuccess);
 async function wakeSuccess(){
+  const tok=++sessionTok;
   Q('#mnote').classList.remove('show');
   caption('( hmm...? )',1800);
-  setBlur(4,1000); await lids(0,1000); hideCap();
+  setBlur(4,1000); await lids(0,1000); if(tok!==sessionTok) return;
+  hideCap();
   show('office'); screen.dataset.state='done';
   resetWorldTransform(); setBlur(5,0);
-  await wait(700);
+  await wait(700); if(tok!==sessionTok) return;
   await lids(.4,320); await lids(0,140); setBlur(2,300);
   await lids(.85,380); await wait(200); await lids(.1,120);
-  setBlur(0,500); await lids(1,420);
+  setBlur(0,500); await lids(1,420); if(tok!==sessionTok) return;
   caption('( Eh, ketiduran... file.docx masih harus dikirim, sih )',3000);
-  await wait(1800);
+  await wait(1800); if(tok!==sessionTok) return;
   Q('#endNote').classList.add('show');
 }
-async function wakeFail(){
+async function wakeFail(tok=sessionTok){
   show('office'); screen.dataset.state='fail';
   resetWorldTransform(); setBlur(3,0);
-  await wait(600);
+  await wait(600); if(tok!==sessionTok) return;
   A.gasp(); restart(office,'jolt');
   await lids(1,140); setBlur(0,600);
   caption('( HAH?! )',1600);
-  await wait(1500);
+  await wait(1500); if(tok!==sessionTok) return;
   Q('#failNote').classList.add('show');
 }
 async function sleepAgain(text){
+  const tok=++sessionTok;
   QA('.ovl.show').forEach(o=>o.classList.remove('show'));
   caption(text);
   world.style.transform='rotate(-3deg) scale(1.05)'; setBlur(3,900);
-  await lids(.3,900); await wait(200); await lids(0,700);
+  await lids(.3,900); await wait(200); if(tok!==sessionTok) return;
+  await lids(0,700); if(tok!==sessionTok) return;
   hideCap(); A.startMusic();
-  await doze(1400);
-  await enterDream();
+  await doze(1400); if(tok!==sessionTok) return;
+  await enterDream(tok);
 }
 Q('#retryBtn').addEventListener('click',()=>sleepAgain('( merem lagi ah... )'));
 Q('#replayBtn').addEventListener('click',()=>sleepAgain('( merem lagi ah... )'));
